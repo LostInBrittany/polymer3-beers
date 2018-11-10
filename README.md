@@ -1,39 +1,42 @@
-# A tutorial on PWA with Polymer 3.x. With beers.
+# A Polymer 3.x. tutorial. With beers.
 
 *A work-in-progress tutorial for creating a Progressive Web App (PWA) with Polymer 3.x*
 
-I have built this [PWA with Polymer 3](https://github.com/LostInBrittany/polymer3-beers) tutorial as a quick entry point to coding [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/) with [Polymer](https://www.polymer-project.org/). If you want to dive deeper into Polymer, I can suggest my [PolymerBeers](https://github.com/LostInBrittany/polymer-beers) tutorial.
+I have built this [Polymer 3 tutorial](https://github.com/LostInBrittany/polymer3-beers) as a quick entry point to [Polymer](https://www.polymer-project.org/). 
 
 For the last several years, I've taught a web-development module in an Engineering School with a rather restrictive network. As I plan to use this tutorial in next year module, in order to explain PWA and Polymer to our students, I needed a tutorial that could be played without network acces, i.e. without Bower or Gulp or even without [Polymer CLI](https://github.com/Polymer/polymer-cli). So *Progreessive Web Apps with Polymer* needed to be able to be done even behind a very restrictive proxy, and all the dependencies are included inside the git project.
 
-![Logo](/img/logo-500px.png)
+![Logo](./img/logo-500px.png)
 
 
 ## What are the objectives of this tutorial ##
 
 
-Follow the tutorial to see how Progressive Web Apps take advantage of new web technologies to act and feel like a native apps. PWAs work for every user regardless of the browser choice, they are reliable, fast and secure. However, building a Progressive Web App from scratch with such requirements can be tedious and complex. As we will see, thanks to Polymer and web components (a set of W3C standards), most of the complex logic can be encapsulated in a component allowing you to build better and faster progressive web apps.
+Follow the tutorial to see how Polymer makes browsers smarter — without the use of native extensions or plug-ins:
 
-When you finish the tutorial you will be able to use the Polymer App Toolkit to create a Progressive Web App that works in all modern browsers and that offer a nearly native experience on browsers supporting it:
++ See examples of how to use client-side data binding to build dynamic views of data that change immediately in response to user actions.
++ See how Polymer keeps your views in sync with your data without the need for DOM manipulation.
++ Learn how to build technical elements to make common web tasks, such as getting data into your app, easier.
 
-+ Code the application with a component approach, with custom elements
-+ Architect your app for instant loading using the App Shell pattern, lazy loading and application fragments
-+ Configure the Service Worker to add offline capabilities
-+ Write a manifest file to ask the browser to show install banners allowing the user to add the PWA to the home screen
-+ Send push notification to the application by using the Web Push API
+When you finish the tutorial you will be able to:
 
-The tutorial guides you through the entire process of building a simple application. Experiments at the end of each step provide suggestions for you to learn more about PWA, Polymer and the application you are building.
++ Create a dynamic application that works in all modern browsers.
++ Create custom elements, with its looks and its behaviour encapsulated inside, setting the bases of a true component architecture client-side
++ Use data binding to wire up your data model to your views.
++ Get data from a server using Polymer iron elements.
++ Use App Router to add multipage capabilities to your application
 
-You can go through the whole tutorial in a couple of hours or you may want to spend a pleasant day really digging into it. If you're looking for a shorter introduction to PWA and or Polymer, check out the official website.
+The tutorial guides you through the entire process of building a simple application. Experiments at the end of each step provide suggestions for you to learn more about Polymer and the application you are building.
 
+You can go through the whole tutorial in a couple of hours or you may want to spend a pleasant day really digging into it. If you're looking for a shorter introduction to Polymer, check out the official website.
 
+![Screenshot](./img/polymer3-beers-final.jpg)  
 
-[![Screenshot](/img/pwa-beers-final-01.t.jpg)](/img/pwa-beers-final-01.jpg)  
-[![Screenshot](/img/pwa-beers-final-02.t.jpg)](/img/pwa-beers-final-02.jpg)  
+![Screenshot](./img/polymer3-beers-final-details.jpg)
 
 ## What do I need to use this tutorial?
 
-The tools strictly needed for this tutorial are a modern web browser (ideally [Chrome](https://www.google.com/chrome/) or [Chromium](https://www.chromium.org/)), a text editor (we suggest the excellent [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io))), a web server and the [Polymer CLI](https://github.com/Polymer/polymer-cli). If you're unable to install the Polymer CLI (for example your're in  workshop with slow network connection), you will be able to do the tutorial, even if in a slightly degraded mode, as we have committed all the needed resources to this repository.
+The tools strictly needed for this tutorial are a modern web browser (ideally [Chrome](https://www.google.com/chrome/) or [Chromium](https://www.chromium.org/)), a text editor (we suggest the excellent [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io))), a web server, [Node JS](https://nodejs.org) and the [Polymer CLI](https://github.com/Polymer/polymer-cli). If you're unable to install the Polymer CLI (for example your're in  workshop with slow network connection), you will be able to do the tutorial, even if in a slightly degraded mode, as we have committed all the needed resources to this repository.
 
 
 ### Web server
@@ -80,38 +83,35 @@ If you already have a web server (Apache, Nginx, ...) in your computer, you can 
 
 ### Polymer CLI
 
-Ideally you should install Polymer CLI. Polymer CLI is a *NodeJS* based tool, and it uses *bower*, so you need both of them too:
+Ideally you should install Polymer CLI. Polymer CLI is a *NodeJS* based tool, so you need it too:
 
 - To get NodeJS for your platform, go to [the NodeJS site](https://nodejs.org).
 
-- To install bower:
+  If you haven't administrator rights in your workstation, please download the binary package for your platform, 
+  uncompress it in a folder inside your home folder and add to the PATH the `bin` folder inside it. 
 
-  ```bash
-  npm install -g bower
-  ```
 - To install the Polymer CLI:
 
   ```bash
   npm install -g polymer-cli
   ```
 
-Then you'll be able to use `polymer` command to create, build and serve your PWA.
+Then you'll be able to use `polymer` command to create, build and serve your application.
 
 > Note: in order to use Polymer CLI with Polymer 3.x, you need a recent version of Polymer CLI. Please be sure your insatlled version is at least 1.8. If you have an older version, please install a more recent one.
 
 
 ## How is the tutorial organized ##
 
-As the computers used for the courses haven't Git, we have structured the project to allow a Git-less use. The `app` directory is the main directory of the project, the working version of the code. The tutorial is divided in steps, each one in its own directory:
+As the computer used for the course haven't Git, we have structured the project to allow a Git-less use. The `app` directory is the main directory of the project, the working version of the code. The tutorial is divided in steps, each one in its own directory:
 
-- [Step 01 - An empty application](./step-01/)
-- [Step 02 - Creating a new element](./step-02/)
-- [Step 03 - A list of Beers](./step-03/)
-- [Step 04 - Adding full text search](./step-04/)
-- [Step 05 - Sorting the list](./step-05/)
-- [Step 06 - Doing some AJAX](./step-06/)
-- [Step 07 - Beer details](./step-07/)
-- [Step 08 - Putting the *P* into PWA](./step-08/)
+1. [Static HTML](./step-01/)
+1. [Using Polymer elements](./step-02/)
+1. [Creating a new element](./step-03/)
+1. [Filtering](./step-04/)
+1. [Sorting](./step-05/)
+1. [Calling the server](./step-06/)
+1. [Routing URLs using App Router](./step-07/)
 
 In each step directory you have a README file that explain the objective of the step, that you will do in the working directory `app`. If you have problems or if you get lost, you also have the solution of each step in the step directories. So if you want to see the intended result of  the 6th step, you can point your browser to http://localhost:8080/step-06/index.html
 
