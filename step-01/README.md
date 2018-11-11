@@ -49,6 +49,10 @@ Add the beer information to the `app/index.html` file:
       </li>
     </ul>
 
+You can use `polymer serve` command to serve your file:
+
+![Screenshot](../img/step-01-01.jpg)
+
 ## Additional experiments ##
 
 Try adding more static HTML to `app/index.html`. For example:

@@ -36,54 +36,13 @@ You can go through the whole tutorial in a couple of hours or you may want to sp
 
 ## What do I need to use this tutorial?
 
-The tools strictly needed for this tutorial are a modern web browser (ideally [Chrome](https://www.google.com/chrome/) or [Chromium](https://www.chromium.org/)), a text editor (we suggest the excellent [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io))), a web server, [Node JS](https://nodejs.org) and the [Polymer CLI](https://github.com/Polymer/polymer-cli). If you're unable to install the Polymer CLI (for example your're in  workshop with slow network connection), you will be able to do the tutorial, even if in a slightly degraded mode, as we have committed all the needed resources to this repository.
-
-
-### Web server
-
-Security policies in the browser make impossible to fully test your JavaScript applications when they have been loaded by opening a local file, they need to be served from a web server.
-
-If you already have a web server (Apache, Nginx, ...) in your computer, you can use it. If not, there are several quick options available:
-
-- Web Server for Chrome: a Chrome/Chromium application that gives you a web server embedded in your browser. You can install it [from the Chrome Web Store](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en) .
-
-  After installing the Web Server for Chrome app, click on the Apps shortcut on the bookmarks bar:
-
-
-  [![Web Server for Chrome](img/chromewebserver-00.t.png)](img/chromewebserver-00.png)
-
-
-  And then on the *Web Server for Chrome* logo to configure the server:
-
-
-  [![Web Server for Chrome](img/chromewebserver-01.t.png)](img/chromewebserver-01.png)
-
-
-  Now you choose as folder to serve the root of this repository. We also suggest to run it on port 8080. You launch the server and open a browser window navigate to http://localhost:8080/test.html to verify that everything is good
-
-- Using Python: if you have Python in your system, the easiest way would be to run the embedded SimpleHTTPServer. Go to the project directory and run
-
-  ```
-  # Python 2.x
-  python -m SimpleHTTPServer 8080
-  ```
-
-  or
-
-  ```
-  # Python 3.x
-  python -m http.server 8080
-  ```
-
-  to start the web server. Now, open a browser window for the app and navigate to http://localhost:8080/test.html to verify that everything is good.
-
-- If you have [NodeJS](http://nodejs.org) in your system, we have put a minimalist JavaScript web-server on `./scripts/web-server.js`. To see the app running in a browser, open a separate terminal/command line tab or window, go to the project directory and then run `node ./scripts/web-server.js` to start the web server. Now, open a browser window navigate to http://localhost:8080/test.html to verify that everything is good.
+The tools strictly needed for this tutorial are a modern web browser (ideally [Chrome](https://www.google.com/chrome/) or [Chromium](https://www.chromium.org/)), a text editor (we suggest the excellent [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io))), [Node JS](https://nodejs.org) and the [Polymer CLI](https://github.com/Polymer/polymer-cli). 
 
 
 
 ### Polymer CLI
 
-Ideally you should install Polymer CLI. Polymer CLI is a *NodeJS* based tool, so you need it too:
+In order to work smoothly with Polymer elements you need either a JS building tools (like webpack) or the Polymer CLI. For this tutorial we are supposing you're using Polymer CLI. As it is a *NodeJS* based tool, so you need it too:
 
 - To get NodeJS for your platform, go to [the NodeJS site](https://nodejs.org).
 
