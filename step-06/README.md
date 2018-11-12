@@ -9,7 +9,7 @@ Our new dataset is now a list of 11 beers stored in JSON format in the `app/data
 
 `app/data/beers/beers.json`:
 
-```json
+```js
 [
   ...
   {
