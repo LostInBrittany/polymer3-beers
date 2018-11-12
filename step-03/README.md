@@ -104,8 +104,8 @@ And then you can use it in the element template:
         /* CSS rules for your element */
       </style>
       <div class="beers">
-        <template is="dom-repeat" items="{{beers}}">
-          <beer-list-item name="{{item.name}}" description="{{item.description}}">
+        <template is="dom-repeat" items="[[beers]]">
+          <beer-list-item name="[[item.name]]" description="[[item.description]]">
           </beer-list-item>
         </template>
       </div>
@@ -154,8 +154,8 @@ and then, inside your component, use granite-bootstrap as shared style:
     return html`
       <style include="granite-bootstrap"></style>
       <div class="beers container">
-        <template is="dom-repeat" items="{{beers}}">
-          <beer-list-item name="{{item.name}}" description="{{item.description}}">
+        <template is="dom-repeat" items="[[beers]]">
+          <beer-list-item name="[[item.name]]" description="[[item.description]]">
           </beer-list-item>
         </template>
       </div>
@@ -186,7 +186,7 @@ Create a repeater in `beer-list` that constructs a simple table:
 <table>
   <tr><th>Row number</th></tr>
   <template is="dom-repeat" items="[0, 1, 2, 3, 4, 5, 6, 7]">
-    <tr><td>{{item}}</td></tr>
+    <tr><td>[[item]]</td></tr>
   </template>
 </table>
 ```

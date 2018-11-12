@@ -29,7 +29,7 @@ export class BeerList extends PolymerElement {
                   id="sort" 
                   class="form-control"
                   on-change='_sortingChanged'>
-                <template is="dom-repeat" items="{{criteria}}">
+                <template is="dom-repeat" items="[[criteria]]">
                   <option 
                       value="[[item.name]]">
                     [[item.label]]
@@ -47,8 +47,8 @@ export class BeerList extends PolymerElement {
             <div class="beers">
               <template 
                   id="beerList" is="dom-repeat" 
-                  items="{{beers}}" filter="_beerFilter" sort="_beerSorter">
-                <beer-list-item name="{{item.name}}" description="{{item.description}}">
+                  items="[[beers]]" filter="_beerFilter" sort="_beerSorter">
+                <beer-list-item name="[[item.name]]" description="[[item.description]]">
                 </beer-list-item>
               </template>
             </div>

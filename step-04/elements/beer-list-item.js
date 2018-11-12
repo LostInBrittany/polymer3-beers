@@ -36,12 +36,12 @@ export class BeerListItem extends PolymerElement {
   // Element class can define custom element reactions
   connectedCallback() {
     super.connectedCallback();
-    console.log('my-element created!');
+    console.log('beer-list-item created!');
   }
 
   ready() {
     super.ready();
-    console.log('my-element is ready!');
+    console.log('beer-list-item is ready!');
   }
 }
 

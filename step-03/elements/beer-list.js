@@ -13,8 +13,8 @@ export class BeerList extends PolymerElement {
     return html`
       <style include="granite-bootstrap"></style>
       <div class="beers container">
-        <template is="dom-repeat" items="{{beers}}">
-          <beer-list-item name="{{item.name}}" description="{{item.description}}">
+        <template is="dom-repeat" items="[[beers]]">
+          <beer-list-item name="[[item.name]]" description="[[item.description]]">
           </beer-list-item>
         </template>
       </div>

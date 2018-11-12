@@ -37,8 +37,8 @@ Let's begin by modifying the template to add the search input.
           </div>
           <div class="col-md-9">
             <div class="beers">
-              <template is="dom-repeat" items="{{beers}}">
-                <beer-list-item name="{{item.name}}" description="{{item.description}}">
+              <template is="dom-repeat" items="[[beers]]">
+                <beer-list-item name="[[item.name]]" description="[[item.description]]">
                 </beer-list-item>
               </template>
             </div>
@@ -70,7 +70,7 @@ In the template we use `on-input` to link the `input` event of the `input` item 
           placeholder="Enter search"
           on-input="_inputChange">
       ...
-      <div>Current search: {{filterText}}</div>
+      <div>Current search: [[filterText]]</div>
       ...
     `;
   }
@@ -122,8 +122,8 @@ The only problem in our case is that, by default, the filter and sort functions 
 1. Add a filter to the template repeater:
 
   ```html
-    <template id="beerList" is="dom-repeat" items="{{beers}}" filter="_beerFilter">
-      <beer-list-item name="{{item.name}}" description="{{item.description}}">
+    <template id="beerList" is="dom-repeat" items="[[beers]]" filter="_beerFilter">
+      <beer-list-item name="[[item.name]]" description="[[item.description]]">
       </beer-list-item>
     </template>
   ```

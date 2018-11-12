@@ -28,12 +28,12 @@ export class BeerList extends PolymerElement {
                   placeholder="Enter search"
                   on-input="_inputChange">
             </div>
-            <div>Current search: {{filterText}}</div>
+            <div>Current search: [[filterText]]</div>
           </div>
           <div class="col-md-9">
             <div class="beers">
-              <template id="beerList" is="dom-repeat" items="{{beers}}" filter="_beerFilter">
-                <beer-list-item name="{{item.name}}" description="{{item.description}}">
+              <template id="beerList" is="dom-repeat" items="[[beers]]" filter="_beerFilter">
+                <beer-list-item name="[[item.name]]" description="[[item.description]]">
                 </beer-list-item>
               </template>
             </div>

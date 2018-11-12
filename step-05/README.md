@@ -48,8 +48,8 @@ We add a `sort` attribute to the `dom-repeat` repeater, in a similar way as we d
 ```html
   <template 
       id="beerList" is="dom-repeat" 
-      items="{{beers}}" filter="_beerFilter" sort="_beerSorter">
-    <beer-list-item name="{{item.name}}" description="{{item.description}}">
+      items="[[beers]]" filter="_beerFilter" sort="_beerSorter">
+    <beer-list-item name="[[item.name]]" description="[[item.description]]">
     </beer-list-item>
   </template>
 ```
@@ -95,7 +95,7 @@ First, we add a `<select>` html element named `orderProp`, so that our users can
     <select 
         id="sort" 
         class="form-control">
-      <template is="dom-repeat" items="{{criteria}}">
+      <template is="dom-repeat" items="[[criteria]]">
         <option value="[[item.name]]">[[item.label]]</option>
       </template>
     </select>
@@ -162,7 +162,7 @@ to the select:
       id="sort" 
       class="form-control"
       on-change='_sortingChanged'>
-    <template is="dom-repeat" items="{{criteria}}">
+    <template is="dom-repeat" items="[[criteria]]">
       <option 
           value="[[item.name]]">
         [[item.label]]
@@ -225,7 +225,7 @@ And then we modify the sort to inverse the order if the `descendingSort` propert
     }
 ```
 
-![Screenshot](/img/step-05_01.jpg)
+![Screenshot](../img/step-05-03.jpg)
 
 ## Summary ##
 

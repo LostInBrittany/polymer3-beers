@@ -17,10 +17,8 @@ You will be mainly using three folders:
 
     - `css`: the stylesheets for the app.
     - `elements`: here you will find the definition of the custom Polymer elements used in the tutorial
-
-- A `data` folder to serve the static data (that would be replaced by a REST entrypoint in a real world application), with a sub-folder:
-
-    - `beers`: a service endpoint with all the information about our beer collection. It will be used in the later steps of the tutorial.
+    - `data`: a folder to serve the static data (that would be replaced by a REST entrypoint in a real world application), with a sub-folder:
+      - `beers`: a service endpoint with all the information about our beer collection. It will be used in the later steps of the tutorial.
 
 
 ## Dependencies
