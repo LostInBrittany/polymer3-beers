@@ -1,0 +1,12 @@
+{
+  "name": "polymer3-beers",
+  "version": "1.0.0",
+  "description": "Polymer beers tutorial",
+  "main": "index.js",
+  "author": "Horacio Gonzalez <horacio.gonzalez@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@granite-elements/granite-bootstrap": "^4.1.1-1",
+    "@polymer/polymer": "^3.1.0"
+  }
+}
